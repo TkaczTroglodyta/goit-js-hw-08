@@ -27,4 +27,13 @@ const onDataInput = e => {
 const onFormSubmit = e => {
   e.preventDefault();
   const { email, message } = e.currentTarget.elements;
+  console.log(`email: ${email.value}, message: ${message.value}`);
+
+  if (email.value === '' || message.value === '') {
+    return alert(`Please fill in all required fields.`);
+  }
+
+  localStorage.removeItem(STORAGE_KEY);
+  e.currentTarget.reset();
+  dataForm = {};
 };
