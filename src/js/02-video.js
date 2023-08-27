@@ -16,5 +16,5 @@ const play = ({ seconds }) => {
 player.on('timeupdate', throttle(play, 1000));
 
 player.setCurrentTime(localStorage.getItem(TIME_KEY)).then(seconds => {
-  console.log(`Video current time is ${isAboutTime} seconds.`);
+  console.log(`Video current time is ${seconds} seconds.`);
 });
